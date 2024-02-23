@@ -1,0 +1,30 @@
+body {
+    background-image: url('./img/background-mainpage.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+}
+button {
+    background-color: #e210b5; /* Màu nền */
+    color: white; /* Màu chữ */
+    padding: 10px 20px; /* Khoảng cách lề nội dung bên trong nút */
+    text-align: center; /* Căn giữa nội dung văn bản */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: 1px solid #e210b5; /* Đường viền */
+    border-radius: 5px; /* Bo góc */
+    cursor: pointer; /* Con trỏ khi di chuột qua nút */
+    text-shadow: 2px 2px 4px #000000;
+  }
+h1 {
+    color: #e210b5;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 55px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+/* Thêm các kiểu khác tại đây */
