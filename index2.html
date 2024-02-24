@@ -5,9 +5,35 @@
     <link rel="stylesheet" href="style.css" text="text/css">
     <title>Hello World</title>
 </head>
-<body>
-    <h1>dòng đầu</h1>
-    <button>Yes</button>
-    <button>No</button>
+<body class="background">
+
+    <div class="container">
+
+        <div class="section">
+            <h1>Dòng đầu</h1>
+        </div>
+
+        <div class="section">
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+        
+    </div>
+
+    <script>
+        const button = document.getElementById('noButton')
+        const button2 = document.getElementById('yesButton')
+        button.addEventListener('mousemove', (e) => {
+            const newX = Math.random() *window.innerWidth;
+            const newY = Math.random() *window.innerHeight;
+            button.style.position = 'absolute';
+            button.style.left = newX +  'px';
+            button.style.top = newY + 'px'; 
+        })
+
+        button2.addEventListener('click',() =>{
+            window.location.href = 'index3.html'
+        })
+    </script>
 </body>
 </html>
