@@ -55,3 +55,31 @@ p{
     text-shadow: 1px 1px 2px #000000;
     margin-bottom: 5px;
 }
+h2{
+    color: #e210b5;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 55px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+/*------------------menu----------------*/
+.menu{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding-top: 30px;
+}
+.menu h2 {
+    margin-bottom: 20px;
+}
+.menu table{
+    width: 100%;
+}
+.menu table thead tr th{
+    text-align: left;
+}
+.menu table tr td {
+    border-bottom: 1px solid #ec0000;
+    padding: 20px, 0;
+}
