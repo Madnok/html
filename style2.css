@@ -9,7 +9,10 @@ body{
     background-size: cover;
     background-position: center;
 }
-
+.openMenu{
+    font-size: 40px;
+    margin-bottom: 15px;
+}
 .container{
     max-width: 1200;
     
@@ -63,6 +66,13 @@ h2{
     text-shadow: 2px 2px 4px #000000;
 }
 
+.menu .custom-size {
+    font-size: 30px; /* Kích thước tùy chỉnh */
+    margin-bottom: 15px;
+    margin-left: 200px;
+    cursor: pointer;
+}
+.fa-bars
 /*------------------menu----------------*/
 .menu{
     width: 50%;
@@ -77,9 +87,33 @@ h2{
     width: 100%;
 }
 .menu table thead tr th{
-    text-align: left;
+    text-align: center;
+}
+.menu table tr{
+    text-align: center;
+}
+.menu table tr td img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
 }
 .menu table tr td {
-    border-bottom: 1px solid #ec0000;
+
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid #ec0000;
     padding: 20px, 0;
+}
+/*---------------------------------------*/
+.menu{
+    border-radius: 2%;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    right: -100%;
+    width: 400px;
+    background-color: #5c4f96;
+    padding: 12, 20px;
+    overflow-y: scroll;
+    transition: all 0.1s ease-in-out;
 }

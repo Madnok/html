@@ -23,20 +23,24 @@ function addMenu(placesImg,placesName){
             alert("Một Chỗ Đi Một Lần Thoi Ní!!!");
         }
     });
+    var addTr;
     if(!placesExist){
-        var addTr = document.createElement('tr')
-        var trContent = '<tr><td style="display: flex; align-items: center;"><img style="width: 70px;" src="'+placesImg+'" alt=""></td><td>'+placesName+'</td><td style="cursor: pointer;">Xóa</td></tr>'
+        addTr = document.createElement('tr')
+        var trContent = '<tr><td style="display: flex;"><img style="width: 70px;" src="'+placesImg+'" alt=""></td><td align-items: center>'+placesName+'</td><td style="cursor: pointer;">Xóa</td></tr>'
         addTr.innerHTML = trContent
         var cartMenu = document.querySelector('tbody')
-        cartMenu.append(addTr)
-        totalPlaces++;
-        cartMenuTotal(totalPlaces);
+        if(cartMenu){
+            cartMenu.append(addTr)
+            totalPlaces++;
+            cartMenuTotal(totalPlaces);
+        
+            addTr.querySelector('td:last-child').addEventListener('click', function(){
+                addTr.remove();
+                totalPlaces--;
+                cartMenuTotal(totalPlaces);
+            });
+        }
     }
-    addTr.querySelector('td:last-child').addEventListener('click', function(){
-        addTr.remove();
-        totalPlaces--;
-        cartMenuTotal(totalPlaces);
-    })
 }
 //----------------Total Places------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 function cartMenuTotal() {
@@ -44,3 +48,20 @@ function cartMenuTotal() {
     var total = document.querySelector('span')
     total.innerText =" "+totalPlaces+" ";
 }
+const openBtn = document.querySelector(".openMenu")
+const closeBtn = document.querySelector(".custom-size")
+
+let isOpen = false;
+openBtn.addEventListener('click',function(){
+    if(isOpen){
+        document.querySelector('.menu').style.right = "-100%"
+    } else {
+        document.querySelector('.menu').style.right = "0"
+    }
+    isOpen = !isOpen
+})
+
+closeBtn.addEventListener('click',function(){
+    document.querySelector('.menu').style.right = "-100%"
+    isOpen = false;
+})
