@@ -200,3 +200,14 @@ h2{
     overflow-y: scroll;
     transition: all 0.1s ease-in-out;
 }
+.move-on-button{
+    background: transparent;
+    border: 2px solid #fa80bdec;
+    border-radius: 20px;
+    transition: 0.5s;
+    color: #fa80bdec;
+}
+.move-on-button:hover {
+    background: #fa80bdec;
+    color: #fff;
+}
