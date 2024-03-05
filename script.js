@@ -1,17 +1,19 @@
+
 const btn = document.querySelectorAll('button');
 // console.log(btn)
 var totalPlaces = 0
+let isOpen = false;
 btn.forEach(function(button,index){
     button.addEventListener('click', function(event){
         var btnItem = event.target
         var places = btnItem.parentElement
         var placesImg = places.querySelector('img').src
-        var placesName = places.querySelector('p').innerText
+        var placesName = places.querySelector(('.places-item-text p')).innerText
         // console.log(placesImg,placesName)
         addMenu(placesImg,placesName)
-       
+        document.querySelector('.menu').style.right = "0"
+        isOpen = !isOpen;
     })
-
     
 })
 function addMenu(placesImg,placesName){
@@ -20,7 +22,7 @@ function addMenu(placesImg,placesName){
     existingPlaces.forEach(function(place){
         if(place.innerHTML == placesName){
             placesExist = true;
-            alert("Một Chỗ Đi Một Lần Thoi Ní!!!");
+            alert("Mỗi Chỗ Đi Một Lần Thoi Ní!!!");
         }
     });
     var addTr;
@@ -50,8 +52,9 @@ function cartMenuTotal() {
 }
 const openBtn = document.querySelector(".openMenu")
 const closeBtn = document.querySelector(".custom-size")
+const saveBtn = document.querySelector('.order')
+const moveOnBtn = document.querySelector('.button-move-on')
 
-let isOpen = false;
 openBtn.addEventListener('click',function(){
     if(isOpen){
         document.querySelector('.menu').style.right = "-100%"
@@ -64,4 +67,40 @@ openBtn.addEventListener('click',function(){
 closeBtn.addEventListener('click',function(){
     document.querySelector('.menu').style.right = "-100%"
     isOpen = false;
-})
+});
+
+saveBtn.addEventListener('click', function() {
+    var places = document.querySelectorAll('tbody tr td:nth-child(2)');
+    var placesData = [];
+    places.forEach(function(place){
+      var placeName = place.innerText;
+      placesData.push(placeName);
+    });
+  
+    var data = new Blob([placesData.join('\n')], { type: 'text/plain' });
+    var url = window.URL.createObjectURL(data);
+  
+    var link = document.createElement('a');
+    link.href = url;
+    link.download = 'WhereToGo.txt';
+    link.click();
+  
+    window.alert('Đã note lại địa điểm thành công hehe!');
+    saveBtnClicked = true;
+    if (!sessionStorage.getItem('pageRefreshed')) {
+    location.reload(); // Refresh the page only if it's not refreshed before
+    sessionStorage.setItem('pageRefreshed', 'true');
+    }
+});
+    window.addEventListener('load', function() {
+    var moveOnBtn = document.querySelector('.places-move-on button');
+    moveOnBtn.style.display = 'block';
+    moveOnBtn.addEventListener('click', function() {
+        moveOnBtn.addEventListener('click', function() {
+          window.location.href = 'index5.html';
+        }); 
+    })
+});
+
+
+
