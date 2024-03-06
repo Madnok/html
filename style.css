@@ -10,6 +10,18 @@ body, html {
     background-size: cover;
     background-position: center;
 }
+/* Default styles for desktop */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+}
 button {
     margin: 0px 50px;
     background-color: #e210b5; /* Màu nền */
