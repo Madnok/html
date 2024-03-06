@@ -13,12 +13,7 @@ background{
     
 }
 
-/* Media query for mobile devices */
-@media (max-width: 768px) {
-    .container-index1 {
-        width: 100%;
-    }
-}
+
 button {
     margin: 0px 50px;
     background-color: #e210b5; /* Màu nền */
@@ -56,6 +51,87 @@ p{
     position: absolute;
     justify-content: center;
 }
+.container-index3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.container-index3 h1{
+    color: #e210b5;
+    text-align: center;
+    font-size: 35px;
+    text-shadow: 2px 2px 4px #000000;
+    margin-top: 30px;
+
+}
+.container-column #buttonPressMe {
+    margin-top: 40%;
+    text-align: center;
+    font-size: 25px;
+    padding: 10px 20px;
+    text-shadow: #000000;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+.container-column {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+}
+#video-along {
+    width: 30vh;
+    height: 58vh;
+    margin-bottom: 68px;
+}
+.container-column img{
+    margin-bottom:50px ;
+    width: 60vh;
+    height: 60vh;
+}
+/* Media query for mobile devices */
+@media (max-width: 600px){
+    .container-index3 {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+    .container-index3 h1{
+        padding-bottom: 10px;
+        color: #e210b5;
+        text-align: center;
+        font-size: 30px;
+        text-shadow: 2px 2px 4px #000000;
+        margin-top: 0px;
+    }
+    .container-column img{
+        margin-bottom:30px ;
+        width: 40vh;
+        height: 40vh;
+    }
+    #buttonPressMe {
+        margin-top: 0 px;
+        text-align: center;
+        font-size: 25px;
+        padding: 10px 20px;
+        text-shadow: #000000;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+    }
+    #video-along {
+        width: 187px;
+        height: 367px;
+    }
+}
+
 .container {
     width: 80%;
     display: flex;
@@ -64,13 +140,9 @@ p{
     align-items: center; /* Căn giữa theo chiều dọc */
     height: 100vh; /* Chiều cao của container, ở đây sử dụng 100% chiều cao của màn hình */
   }
-.container-column {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
-    height: 100vh;
-}
+
+
+
 .section-text {
     text-align: center;
 }
@@ -107,33 +179,8 @@ p{
     color: #fff;
   }
 
-.section  {
-    flex:1;
-    position: relative;
-    top: 50%;
-    margin: 10px;
-    text-align: center;
-}
-.section #buttonPressMe {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 30px;
-    padding: 10px 20px;
-    text-shadow: #000000;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
-}
-#video-along {
-    width: 300px;
-    height: 484px;
-    margin: 0 auto;
-    
-}
 
-#flowercat1, #flowercat2{
-    margin-bottom:170px ;
-    width: 50vh;
-    height: 60vh;
-}
+
 
 /* Thêm các kiểu khác tại đây */
 /* Thêm các kiểu khác tại đây */

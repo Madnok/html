@@ -6,35 +6,47 @@
     <title>Cảm Ơn Em Iu <3</title>
 </head>
 <body class="background">
-    <div class="container">
+    <div class="container-index3">
         <h1>Cảm Ơn Em Vì Đã Làm Bạn Gái Anh Nhóe ❤</h1>
         <div class="container-column">
-            <div class="section">
-                <img id="flowercat1" src="./img/flowercat1.jpg" alt="">
-            </div>
-
-            <div class="section">
-                
                 <video id="video-along" controls autoplay>
                     <source src="./img/along.mp4" type="video/mp4">
                 </video>
-                
-                <button id='buttonPressMe'> Bấm Vào Anh 😘 </button>
-            </div>
-
-            <div class="section">
-                <img id="flowercat2" src="./img/flowercat2.jpg" alt="">
-            </div>
+                <img id="flowercat1" src="./img/flowercat1.jpg" alt="" style="display: none;">
+                <img id="flowercat2" src="./img/flowercat2.jpg" alt="" style="display: none;">
+                <img id="flowercat3" src="./img/flowercat3.jpg" alt="" style="display: none;"> 
+                <img id="flowercat4" src="./img/flowercat4.jpg" alt="" style="display: none;"> 
+                <img id="flowercat5" src="./img/flowercat5.jpg" alt="" style="display: none;">
+                <img id="flowercat6" src="./img/flowercat6.jpg" alt="" style="display: none;"> 
+                <img id="flowercat7" src="./img/flowercat7.jpg" alt="" style="display: none;"> 
+                <img id="flowercat8" src="./img/flowercat8.jpg" alt="" style="display: none;">  
         </div>
+        <button id='buttonPressMe'> Bấm Vào Anh 😘 </button>
     </div>
-    <script>
+    <!-- <script>
         const button = document.getElementById('buttonPressMe')
         button.addEventListener('click',() =>(
             window.location.href = 'index4.html'
         ) )
-    </script>
+    </script> -->
+<script>
+    const button = document.getElementById('buttonPressMe');
+    let clickCount = 0;
+    const images = ['video-along', 'flowercat1', 'flowercat2', 'flowercat3', 
+    'flowercat4', 'flowercat5', 'flowercat6', 'flowercat7', 'flowercat8'];
+
+    button.addEventListener('click', () => {
+    document.getElementById(images[clickCount]).style.display = 'none';
+    if(clickCount === 9){
+        window.location.href = 'index4.html' 
+    } else {
+        clickCount = (clickCount + 1) % 9;
+        document.getElementById(images[clickCount]).style.display = 'block';
+    }
+    });
+</script>
 </body>
 </html>
 
-https://www.youtube.com/watch?v=ZvKSiOtEJ5E&themeRefresh=1<br>
-https://www.youtube.com/watch?v=YtYcYRsODmI
+<!-- https://www.youtube.com/watch?v=ZvKSiOtEJ5E&themeRefresh=1<br>
+https://www.youtube.com/watch?v=YtYcYRsODmI -->
