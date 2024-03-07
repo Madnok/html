@@ -1,18 +1,9 @@
-body, html {
+body {
     font-family: Arial, sans-serif;
     background-image: url('./img/backgroundMain.jpg');
     background-size: cover;
     background-position: center;
 }
-
-background{
-    background-image: url('./img/backgroundMain.jpg');
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    
-}
-
 
 button {
     margin: 0px 50px;
@@ -186,6 +177,69 @@ p{
 /* Thêm các kiểu khác tại đây */
 /* Thêm các kiểu khác tại đây */
 /* Thêm các kiểu khác tại đây */
+.title-date {
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    height: 170px;
+}
+.title-date h2 {
+    color: #e210b5;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #000000;
+}
+.title-date i {
+    font-size: 30px;
+    color: #fa80bdec;
+    display: inline-block;
+    border: 2px solid #fa80bdec;
+    padding: 5px;
+    text-shadow: 2px 2px 4px #000000;
+    border-radius: 6px;
+}
+.places-section {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+.places-section .pre-btn, .nxt-btn{
+    border: none;
+    width: 8%;
+    height: 468px;
+    position: absolute;
+    top: 30;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #d52c25 250%);
+    cursor: pointer;
+    z-index: 8;
+    
+}
+.pre-btn {
+    left: 0;
+    transform: rotate(180deg);
+}
+.nxt-btn {
+    right: 0;
+}
+.pre-btn:hover img,
+.nxt-btn:hover img {
+  opacity: 1;
+}
+.places-container {
+    padding: 0 10vw;
+    height: 60%;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  
+  .places-container::-webkit-scrollbar {
+    display: none;
+  }
 .openMenu{
     font-size: 40px;
     margin-bottom: 15px;
@@ -196,28 +250,50 @@ p{
     margin: auto;   
 }
 .places-items{
-    display: flex;
-    padding: 12px;
-    background-color: rgb(248, 0, 215);
-    justify-content: space-between;
+    flex: 0 0 auto;
+  width: 250px;
+  height: 450px;
+  margin-right: 40px;
 }
+.places-items p{
+    position: relative;
+    top:-20px;
+    color: #e210b5;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 35px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
 .places-move-on{
-    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .places{
-    width: 23%;
-    margin: 10px;
-    background-color: rgb(0, 0, 0);
-    padding: 12px;
+    position: relative;
+    width: 100%;
+    height: 440px;
+    margin: 15px;
+    background: linear-gradient(rgba(116, 2, 14, 0.65), rgba(202, 26, 80, 0.75));
+    padding: 10px;
     text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 0 3px 6px rgba(175, 57, 150, 0.7);
 }
 .places img{
     width: 100%;
     height: 30vh;
     margin-bottom: 10px;
 }
+
+@media (max-width: 600px) {
+    .places-section .nxt-btn, .places-section .pre-btn {
+        display: none;
+    }
+}
+
+
 button {
     margin: 0px 50px;
     background-color: #e210b5; /* Màu nền */
@@ -252,6 +328,12 @@ h2{
     margin-bottom: 15px;
     margin-left: 200px;
     cursor: pointer;
+}
+.note {
+    font-size: 15px;
+    color: #fff;
+    position: relative;
+    top: -20px;
 }
 .fa-bars
 /*------------------menu----------------*/

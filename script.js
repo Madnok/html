@@ -1,9 +1,10 @@
 
-const btn = document.querySelectorAll('button');
+const btn = document.querySelectorAll('.choose-btn');
+
 // console.log(btn)
 var totalPlaces = 0
 let isOpen = false;
-btn.forEach(function(button,index){
+btn.forEach(function(button){
     button.addEventListener('click', function(event){
         var btnItem = event.target
         var places = btnItem.parentElement
@@ -11,6 +12,9 @@ btn.forEach(function(button,index){
         var placesName = places.querySelector(('.places-item-text p')).innerText
         // console.log(placesImg,placesName)
         addMenu(placesImg,placesName)
+        nxtBtn.forEach(btn => {
+            btn.style.display = 'none';
+        });
         document.querySelector('.menu').style.right = "0"
         isOpen = !isOpen;
     })
@@ -54,18 +58,43 @@ const openBtn = document.querySelector(".openMenu")
 const closeBtn = document.querySelector(".custom-size")
 const saveBtn = document.querySelector('.order')
 const moveOnBtn = document.querySelector('.button-move-on')
+const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+const preBtn = [...document.querySelectorAll('.pre-btn')];
+const placesContainers = [...document.querySelectorAll('.places-container')];
 
-openBtn.addEventListener('click',function(){
-    if(isOpen){
-        document.querySelector('.menu').style.right = "-100%"
-    } else {
-        document.querySelector('.menu').style.right = "0"
-    }
-    isOpen = !isOpen
+placesContainers.forEach((item, i) => {
+    let containerDimensions = item.getBoundingClientRect();
+    let containerWidth = containerDimensions.width;
+
+    nxtBtn[i].addEventListener('click', () => {
+        item.scrollLeft += containerWidth;
+    })
+
+    preBtn[i].addEventListener('click', () => {
+        item.scrollLeft -= containerWidth;
+    })
 })
+
+openBtn.addEventListener('click', function() {
+    if (isOpen) {
+        document.querySelector('.menu').style.right = "-100%";
+        nxtBtn.forEach(btn => {
+            btn.style.display = 'block';
+        });
+    } else {
+        document.querySelector('.menu').style.right = "0";
+        nxtBtn.forEach(btn => {
+            btn.style.display = 'none';
+        });
+    }
+    isOpen = !isOpen;
+});
 
 closeBtn.addEventListener('click',function(){
     document.querySelector('.menu').style.right = "-100%"
+    nxtBtn.forEach(btn => {
+        btn.style.display = 'block';
+    });
     isOpen = false;
 });
 
@@ -92,7 +121,7 @@ saveBtn.addEventListener('click', function() {
     sessionStorage.setItem('pageRefreshed', 'true');
     }
 });
-    window.addEventListener('load', function() {
+window.addEventListener('load', function() {
     var moveOnBtn = document.querySelector('.places-move-on button');
     moveOnBtn.style.display = 'block';
     moveOnBtn.addEventListener('click', function() {
