@@ -93,7 +93,7 @@ openBtn.addEventListener('click', function() {
 closeBtn.addEventListener('click',function(){
     document.querySelector('.menu').style.right = "-100%"
     nxtBtn.forEach(btn => {
-        btn.style.display = 'block';
+        btn.style.display = 'none';
     });
     isOpen = false;
 });

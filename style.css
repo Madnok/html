@@ -369,12 +369,13 @@ h2{
 }
 /*---------------------------------------*/
 .menu{
+    
     border-radius: 2%;
     position: fixed;
     height: 100vh;
     top: 0;
     right: -100%;
-    width: 400px;
+    width: 428px;
     background-color: #5c4f96;
     padding: 12, 20px;
     overflow-y: scroll;
